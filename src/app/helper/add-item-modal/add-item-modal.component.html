@@ -1,0 +1,18 @@
+<ng-template #content let-c="close('a')" let-d="dismiss()">
+    <div class="modal-header">
+      <h4 class="modal-title">Add Item</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <input class="form-control" type="text" placeholder="Item name" [(ngModel)]="itemName">
+        <br>
+        <input class="form-control" type="text" placeholder="Item Quantity eg. 5 kg" [(ngModel)]="itemQuantity">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="addItem()">Add</button>
+    </div>
+  </ng-template>
+
+  <button class="btn btn-success btn-sm float-right mr-2" (click)="openVerticallyCentered(content)">Add Item</button>
